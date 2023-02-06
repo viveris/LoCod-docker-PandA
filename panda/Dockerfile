@@ -31,4 +31,4 @@ RUN useradd -s /bin/bash -m locod
 
 USER locod
 
-RUN echo "export PATH=$PATH:/opt/panda/bin" >> /home/locod/.bashrc
+ENV PATH=$PATH:/opt/panda/bin
