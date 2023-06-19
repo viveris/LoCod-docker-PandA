@@ -14,7 +14,7 @@ build-ci-docker:
 
   script:
     - docker build -t ${IMG_NAME}_ci:ci-${CI_COMMIT_REF_NAME} panda/
-    - docker run --rm -t ${IMG_NAME}_ci:ci-${CI_COMMIT_REF_NAME} bambu --version
+    - docker run --rm -t -u $(id -u):$(id -g) ${IMG_NAME}_ci:ci-${CI_COMMIT_REF_NAME} bambu --version
 
 build-deploy:
   stage: deploy

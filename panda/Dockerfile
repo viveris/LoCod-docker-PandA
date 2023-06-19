@@ -34,4 +34,6 @@ ENV PATH=/opt/panda/bin:$PATH
 
 
 # Change workdir
-WORKDIR /root
+RUN mkdir /workdir
+RUN chmod -R 777 /workdir
+WORKDIR /workdir
